@@ -34,3 +34,12 @@ table td {
     padding: 8px;
     text-align: center;
 }
+
+/* Quoted text styling */
+.quote {
+    background-color: #f0f8ff;
+    border-left: 4px solid #007bff;
+    padding: 10px;
+    margin: 10px 0;
+    font-style: italic;
+}
