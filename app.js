@@ -42,6 +42,24 @@ function createTable() {
     editor.appendChild(table);
 }
 
+function insertQuote() {
+    const selectedText = window.getSelection();
+    if (selectedText.rangeCount > 0) {
+        const range = selectedText.getRangeAt(0);
+        const quoteBlock = document.createElement("div");
+        quoteBlock.classList.add("quote");
+        quoteBlock.textContent = selectedText.toString();
+
+        // Clear the selection
+        selectedText.deleteFromDocument();
+
+        // Insert the quote block at the cursor position
+        range.insertNode(quoteBlock);
+    } else {
+        alert("Please select text to quote.");
+    }
+}
+
 function uploadFile() {
     const fileInput = document.getElementById('fileInput');
     const file = fileInput.files[0];
